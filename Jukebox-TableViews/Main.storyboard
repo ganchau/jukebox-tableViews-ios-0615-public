@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Zz3-f5-Cni">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Zz3-f5-Cni">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
         <!--Playlists-->
@@ -52,10 +52,10 @@
             </objects>
             <point key="canvasLocation" x="552" y="-21"/>
         </scene>
-        <!--Song Table View Controller-->
+        <!--Song View Controller-->
         <scene sceneID="XQL-lz-pgx">
             <objects>
-                <viewController id="k9u-wF-Cl3" customClass="FISSongTableViewController" sceneMemberID="viewController">
+                <viewController id="k9u-wF-Cl3" customClass="FISSongViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="l0I-cL-9OW"/>
                         <viewControllerLayoutGuide type="bottom" id="RpB-lJ-u5Y"/>
@@ -65,7 +65,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Tbl-bF-g1y">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="493"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="477"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="songCell" textLabel="vqy-3i-4HH" detailTextLabel="Okf-zc-Lqo" style="IBUITableViewCellStyleSubtitle" id="3zo-sF-hU8">
@@ -95,22 +95,34 @@
                                 </prototypes>
                             </tableView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oV6-BP-3Z8">
-                                <rect key="frame" x="0.0" y="493" width="325" height="75"/>
+                                <rect key="frame" x="0.0" y="477" width="325" height="91"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P5C-BY-XsI">
-                                        <rect key="frame" x="20" y="20" width="33" height="33"/>
+                                        <rect key="frame" x="20" y="36" width="33" height="33"/>
                                         <state key="normal" backgroundImage="stop_icon.png">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="stopButtonTapped:" destination="k9u-wF-Cl3" eventType="touchUpInside" id="lHS-hf-qVc"/>
+                                            <action selector="controlButtonPressed:" destination="k9u-wF-Cl3" eventType="touchUpInside" id="Tx7-fy-it4"/>
                                         </connections>
                                     </button>
                                     <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UqX-xd-ugE">
-                                        <rect key="frame" x="61" y="36" width="244" height="2"/>
+                                        <rect key="frame" x="20" y="18" width="285" height="2"/>
                                         <color key="progressTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="trackTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </progressView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dZs-Jh-J1N">
+                                        <rect key="frame" x="61" y="34" width="244" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LS3-Bn-0XC">
+                                        <rect key="frame" x="61" y="54" width="244" height="15"/>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="11"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.47832187108845459" green="0.77600845025510201" blue="0.58870549550505158" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
@@ -120,7 +132,7 @@
                     <navigationItem key="navigationItem" id="NsD-Jb-C2U">
                         <nil key="title"/>
                         <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="gEC-OE-4Ld">
-                            <rect key="frame" x="38" y="7.5" width="244" height="29"/>
+                            <rect key="frame" x="38" y="8" width="244" height="29"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <segments>
                                 <segment title="Title"/>
@@ -129,13 +141,16 @@
                             </segments>
                             <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
-                                <action selector="sortControlValueChanged:" destination="k9u-wF-Cl3" eventType="valueChanged" id="w9T-gZ-ohK"/>
+                                <action selector="segmentedControlPressed:" destination="k9u-wF-Cl3" eventType="valueChanged" id="mZL-uf-2QM"/>
                             </connections>
                         </segmentedControl>
                     </navigationItem>
                     <connections>
-                        <outlet property="songProgressView" destination="UqX-xd-ugE" id="aMl-BB-aXc"/>
-                        <outlet property="tableView" destination="Tbl-bF-g1y" id="IQe-TQ-UPv"/>
+                        <outlet property="artistAlbumPlayingLabel" destination="LS3-Bn-0XC" id="98z-Lj-uAP"/>
+                        <outlet property="controlButton" destination="P5C-BY-XsI" id="mLa-3p-KWA"/>
+                        <outlet property="songPlayingLabel" destination="dZs-Jh-J1N" id="pEL-Ha-NtW"/>
+                        <outlet property="songProgressBar" destination="UqX-xd-ugE" id="UN2-Pz-xDe"/>
+                        <outlet property="songsTableView" destination="Tbl-bF-g1y" id="ejQ-m8-qXG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vX3-MG-Jel" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -194,7 +209,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="974" y="-744"/>
+            <point key="canvasLocation" x="1409" y="-15"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="7UR-gl-lg7">

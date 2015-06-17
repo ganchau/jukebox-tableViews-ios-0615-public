@@ -16,7 +16,6 @@ target "Jukebox-TableViewsTests" do
 
   pod 'Swizzlean', '~> 0.1.1' 
 
-  pod 'OCMockito'
 
   pod 'OCMock', '~> 2.2.4'
   pod 'OHHTTPStubs', '~> 3.1.2'
